@@ -11,19 +11,13 @@ class Board:
         self.grid[4][4] = 'w'
         self.grid[3][4] = 'b'
         self.grid[4][3] = 'b'
+        self.w_score = 2
+        self.b_score = 2
 
     def print_board(self):
         for row in self.grid:
             print(*row)
         
-    def get_score(self):
-        white_count = 0
-        black_count = 0
-        for row in self.grid:
-            for element in row:
-                if element == 'w': white_count += 1 #Tells the number of white tokens present in the board
-                if element == 'b' : black_count += 1 #Tells the number of black tokens present in the board
-        return white_count, black_count
     
     def is_full(self):
         for row in self.grid:
