@@ -26,11 +26,11 @@ def is_on_board(r, c):
 def check_direc(b, r, c, player,vector): #board --> state of board
                                               #r, c -->  co-ord of proposed new move
                                               #player --> current player
-                                              #dr, dc --> DIRECn vector
+                                              #(dr, dc) --> DIRECn vector
     pieces_to_flip = []
     curr_r = r + vector[0]
     curr_c = c + vector[1]
-    while (is_on_board(curr_r, curr_c) is True):
+    while (is_on_board(curr_r, curr_c)):
         if b[curr_r][curr_c] == 'e':
             return []
         elif b[curr_r][curr_c] == player:
