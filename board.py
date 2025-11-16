@@ -35,11 +35,9 @@ class Board:
     def get_data(self):
         return self.player, self.grid
 
-    # def set_cell(self,r,c):
         
 
 b = Board()
 b.print_board()
-print(b.get_score())
 print(b.is_full())
 print(b.get_cell(1,2))
