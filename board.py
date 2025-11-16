@@ -1,6 +1,6 @@
 class Board:
     def __init__(self):
-        self.player = 0 #0 means black's turn, 1 means white's turn
+        self.player = 0   
         self.grid = [['e' for _ in range(8)] for _ in range(8)]
         #The below 4 lines sets the initial board
         self.grid[3][3] = 'w' 
