@@ -64,7 +64,6 @@ class GUI:
     def click(self, event):
         row = event.y // 112
         col = event.x // 112
-        print("Clicked:", row, col)
         return row, col
 
 
