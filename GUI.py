@@ -13,11 +13,7 @@ class GUI:
                                 bg="darkgreen", highlightthickness=3)
         self.canvas.pack(anchor="center")
 
-        self.btn_start = tk.Button(self.root, text="Start",
-                                   command=lambda: self.start(self.btn_start,
-                                                              self.btn_load,
-                                                              self.status,
-                                                              self.btn_save))
+        self.btn_start = tk.Button(self.root, text="Start",command=lambda: self.start(self.btn_start, self.btn_load, self.status, self.btn_save))
         self.canvas.create_window(448, 400, window=self.btn_start)
 
         self.btn_load = tk.Button(self.root, text="Load")
