@@ -14,7 +14,7 @@ class myGUI:
                                 bg="darkgreen", highlightthickness=3)
         self.canvas.pack(anchor="center")
 
-        self.btn_start = tk.Button(self.root, text="Start",command=lambda: self.start(self.btn_start, self.btn_load, self.status, self.btn_save,control))
+        self.btn_start = tk.Button(self.root, text="Start",command=lambda: self.start(self.btn_start, self.btn_load, self.status, self.btn_save))
         self.canvas.create_window(448, 400, window=self.btn_start)
 
         self.btn_load = tk.Button(self.root, text="Load")
@@ -44,7 +44,7 @@ class myGUI:
         self.canvas.create_oval(x1, y1, x2, y2, fill=color)
         self.status.config(text=f"Black:{blackscore}                      White:{whitescore}")
 
-    def start(self, widget1, widget2, widget3, widget4,control):
+    def start(self, widget1, widget2, widget3, widget4):
         widget1.destroy()
         widget2.destroy()
         widget3.config(text="Black:2                      White:2")
