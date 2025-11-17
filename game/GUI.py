@@ -1,6 +1,6 @@
 import tkinter as tk
 
-class GUI:
+class myGUI:
 
     ###################################################################################
     def __init__(self):
@@ -63,5 +63,5 @@ class GUI:
         return row, col
 
 
-GUI()
+myGUI()
 
