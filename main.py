@@ -16,7 +16,7 @@ class Game:
         for r in range(8):
             for c in range(8):
                 if self.board.grid[r][c] != 0:
-                    self.gui.play(r, c,self.board.player, self.board.b_score, self.board.w_score)
+                    self.gui.play(r, c,self.board.grid[r][c], self.board.b_score, self.board.w_score)
                     # print(r, c, self.board.grid[r][c])
 
     # def save(self):
