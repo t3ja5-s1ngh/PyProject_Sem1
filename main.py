@@ -1,5 +1,5 @@
 import board
-import trial_game_logic as logic
+import game_logic as logic
 import file_manager   
 from GUI import myGUI
 
