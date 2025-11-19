@@ -1,21 +1,25 @@
 
-'''We will recieve x,y,player,board. this file will only check wheter the move selcted by player is valid or not.'''
+'''Directions is a list which includes the fundamental directions that is up, up-right, right, down-right, down, down-left, left, up-left.'''
 
 Directions = [(0,1),(1,1),(1,0),(1,-1),(0,-1),(-1,-1),(-1,0),(-1,1)]
             #   N    N-E    E     S-E     S     S-W      W     N-W 
 
+
+'''While going through all the squares on the board this function ensures that we don't exceed the board.'''
 def is_on_board(r, c):
     if(0<= r <= 7) and (0<= c <= 7):
         return True
     return False
 
-def switch_player(player):
-    if player == 1: return 2
+
+'''It switches the player and returns the next player'''
+def get_opponent(current_player):
+    # return switch_player(current_player)
+    if current_player == 1: return 2
     else: return 1
 
-def get_opponent(current_player):
-    return switch_player(current_player)
 
+'''It returns the list of flipped coins in a particular direction'''
 def get_flips_in_direction(b,r,c,player,vector):
     pieces_to_flip = []
     opponent = get_opponent(player)
@@ -33,6 +37,8 @@ def get_flips_in_direction(b,r,c,player,vector):
             curr_c += vector[1]
     return []
 
+
+'''It provides all directions one by one to the get_flips_in_direction'''
 def get_all_flips(b,r,c,player):
     all_flips = []
     if b[r][c] != 0: return []
@@ -40,9 +46,9 @@ def get_all_flips(b,r,c,player):
     for vector in Directions:
         all_flips.extend(get_flips_in_direction(b,r,c,player,vector))
     return all_flips
-# The return from this will be used to create next state board
 
 
+'''It checks wheter the player has any legal move or not'''
 def has_legal_moves(b,player):
     for r in range(8):
         for c in range(8):
@@ -51,6 +57,8 @@ def has_legal_moves(b,player):
                     return True
     return False
 
+
+'''If the next player doesnt have any legal move there turn will skip '''
 def determine_next_player_id(b, last_player):
     opponent = get_opponent(last_player)
 
@@ -60,7 +68,7 @@ def determine_next_player_id(b, last_player):
     elif has_legal_moves(b, last_player):
         return last_player 
      
-
+'''next_state is the main function which is called by main and returns the final state of the board with the player who will be playing next'''
 def next_state(b,r,c,player):
     board_cpy = [row[:] for row in b]
     all_flips = get_all_flips(b,r,c,player)
