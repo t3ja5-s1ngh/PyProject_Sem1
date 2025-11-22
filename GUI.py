@@ -34,15 +34,16 @@ class myGUI:
             self.canvas.create_line(0, i*(w//8), w, i*(w//8), fill="black")
             self.canvas.create_line(i*(h//8), 0, i*(h//8), h, fill="black")
 
-    def play(self, row, col, color, blackscore, whitescore):
+    def play(self, row, col, color, blackscore, whitescore,turn):
         x1 = col * 112 + 10
         y1 = row * 112 + 10
         x2 = (col+1) * 112 - 10
         y2 = (row+1) * 112 - 10
         color="black" if color==1 else "white"
+        turn="Black"  if turn==1 else "White"
 
         self.canvas.create_oval(x1, y1, x2, y2, fill=color)
-        self.status.config(text=f"Black:{blackscore}                      White:{whitescore}")
+        self.status.config(text=f"Black:{blackscore}              {turn}'s turn              White:{whitescore}")
 
     def start(self, widget1, widget2, widget3, widget4):
         widget1.destroy()
@@ -51,10 +52,10 @@ class myGUI:
         widget4.place(x=472, y=960)
         self.canvas.bind("<Button-1>",self.click)
         self.draw_grid(896, 896)
-        self.play(3, 3, 0, 2, 2)
-        self.play(3, 4, 1, 2, 2)
-        self.play(4, 3, 1, 2, 2)
-        self.play(4, 4, 0, 2, 2)
+        self.play(3, 3, 0, 2, 2,1)
+        self.play(3, 4, 1, 2, 2,1)
+        self.play(4, 3, 1, 2, 2,1)
+        self.play(4, 4, 0, 2, 2,1)
 
     def click(self, event):
         row = event.y // 112

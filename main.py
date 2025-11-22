@@ -13,10 +13,11 @@ class Game:
         self.board.grid,self.board.player=logic.next_state(self.board.grid, row, col, self.board.player)
         # print(self.board.grid)
         # print(row, col, self.board.player)
+        self.board.count()
         for r in range(8):
             for c in range(8):
                 if self.board.grid[r][c] != 0:
-                    self.gui.play(r, c,self.board.grid[r][c], self.board.b_score, self.board.w_score)
+                    self.gui.play(r, c,self.board.grid[r][c], self.board.b_score, self.board.w_score,self.board.player)
                     # print(r, c, self.board.grid[r][c])
 
     def save(self):

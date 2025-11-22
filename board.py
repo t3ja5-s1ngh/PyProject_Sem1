@@ -11,14 +11,15 @@ class Board:
         self.b_score = 2
 
     def count(self):
+        self.w_score = 0
+        self.b_score = 0
         for i in self.grid:
             for j in i:
                 if j == 2:
                     self.w_score+=1
                 elif j == 1:
                     self.b_score+=1
-        return [self.b_score,self.w_score]
-    
+
     def end_game(self):
         if self.w_score + self.b_score == 64 or self.w_score * self.b_score == 0:
             return True
