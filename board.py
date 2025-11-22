@@ -1,4 +1,6 @@
 class Board:
+    # Initialize the board: set current player, create an 8x8 grid,
+    # place the four starting pieces, and initialize scores.
     def __init__(self):
         self.player = 1 
         self.grid = [[0 for _ in range(8)] for _ in range(8)]
@@ -10,6 +12,8 @@ class Board:
         self.w_score = 2
         self.b_score = 2
 
+    # Recalculate and update black and white piece counts from the grid.
+    # This resets stored scores and returns nothing (updates attributes).
     def count(self):
         self.w_score = 0
         self.b_score = 0
@@ -20,6 +24,8 @@ class Board:
                 elif j == 1:
                     self.b_score+=1
 
+    # Return True when the game has ended: either the board is full
+    # or one player has no pieces remaining.
     def end_game(self):
         if self.w_score + self.b_score == 64 or self.w_score * self.b_score == 0:
             return True
