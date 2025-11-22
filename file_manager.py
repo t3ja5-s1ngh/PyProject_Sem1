@@ -7,11 +7,11 @@ def save_game(board, current_player, filename="othello_save.txt"):
         -Line 2-9:eight rows, each row is 8 values seperated by spaces (each 0,1,2)
 
     Returns:
-        True on success, False on file error."""
+        True on success"""
     ################################################################################################################
     
     keys=[0,1,2]  #0->empty,1->black,2->white
-    with open(filename,"w",encoding="utf-8") as f:
+    with open(filename,"w") as f:
         f.write(str(current_player)+"\n")
         for row in board:
             line=" ".join(str(cell) for cell in row)
@@ -39,12 +39,12 @@ def load_game(filename="othello_save.txt"):
             if the file does not exist, is corrupted, or the format is invalid."""
     ################################################################################################################
 
-    with open(filename, "r",encoding="utf-8") as f:
+    with open(filename, "r") as f:
         current_player=f.readline().strip()
         board=[]
         for i in range(8):
-            row =f.readline()
-        board.append(row)
+            row =(f.readline()).strip()
+            board.append(list(map(int,row.split())))
         return board, int(current_player)
 
 
