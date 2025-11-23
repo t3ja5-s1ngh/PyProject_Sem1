@@ -26,7 +26,7 @@ def load_game(filename="othello_save.txt"):
     Expected file format:
         Line 1: current player (1 or 2)
 
-        Lines 2-9: 8 roews, each containing 8 space-seperated values.
+        Lines 2-9: 8 rows, each containing 8 space-seperated values.
             Each value must be one of:
                                  0 ->empty
                                  1->black
@@ -45,6 +45,7 @@ def load_game(filename="othello_save.txt"):
         for i in range(8):
             row =(f.readline()).strip()
             board.append(list(map(int,row.split())))
+        print("Game loaded succesfully.")
         return board, int(current_player)
 
 

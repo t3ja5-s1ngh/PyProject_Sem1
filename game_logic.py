@@ -58,7 +58,7 @@ def has_legal_moves(b,player):
     return False
 
 
-'''If the next player doesnt have any legal move there turn will skip '''
+'''If the next player doesnt have any legal move they turn will skip '''
 def determine_next_player_id(b, last_player):
     opponent = get_opponent(last_player)
 

@@ -1,19 +1,18 @@
 class Board:
-    # Initialize the board: set current player, create an 8x8 grid,
-    # place the four starting pieces, and initialize scores.
+    # Initialize the board: set current player, create an 8x8 grid, set scores
+    # place the four starting pieces
     def __init__(self):
         self.player = 1 
         self.grid = [[0 for _ in range(8)] for _ in range(8)]
+        self.w_score = 2
+        self.b_score = 2
         #The below 4 lines sets the initial board
         self.grid[3][3] = 2 #white is 2
         self.grid[4][4] = 2
         self.grid[3][4] = 1 #black is 1
         self.grid[4][3] = 1
-        self.w_score = 2
-        self.b_score = 2
-
+        
     # Recalculate and update black and white piece counts from the grid.
-    # This resets stored scores and returns nothing (updates attributes).
     def count(self):
         self.w_score = 0
         self.b_score = 0
