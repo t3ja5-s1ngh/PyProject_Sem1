@@ -22,7 +22,7 @@ class myGUI:
         self.canvas.create_window(448, 448, window=self.btn_load)
     ########set status bar
         self.status = tk.Label(self.root, text="Othello", font=("Arial", 12), bg="lightgray")
-        self.status.place(x=40, y=900, width=920, height=50)
+        self.status.pack(side=tk.BOTTOM, fill=tk.X)
     ########set save button
         self.btn_save = tk.Button(self.root, text="Save",command=control.save)
 ################################################################################################################
@@ -46,7 +46,7 @@ class myGUI:
 ################################################################################################################
     def start(self):
     ########start a new game and bind click event
-        self.btn_save.place(x=472, y=960)
+        self.btn_save.pack(side=tk.BOTTOM, pady=10)
         self.canvas.bind("<Button-1>",self.click)
         self.draw_grid(896, 896)
         self.play(3, 3, 0, 2, 2,1)
@@ -62,7 +62,7 @@ class myGUI:
 ################################################################################################################
     def load_game(self):
     ########load a saved game and bind click event
-        self.btn_save.place(x=472, y=960)
+        self.btn_save.pack(side=tk.BOTTOM, pady=10)
         self.canvas.bind("<Button-1>",self.click)
         self.draw_grid(896, 896)
         self.control.load()
