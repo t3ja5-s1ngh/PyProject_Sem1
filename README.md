@@ -42,6 +42,6 @@
 ## Credits
     BE2025001 Aditya - Game logic dev2 and main.py dev2
     BE2025007 Bharat - File manager
+    BE2025015 Kavyansh Agarwal - Board logic dev1 and Game logic dev3
     IE2025014 Parth - Game logic dev1 and Board logic dev2
-    IE2025015 Kavyansh Agarwal - Board logic dev1 and Game logic dev3
     IE2025033 Tejas Singh - GUI and main.py dev1
